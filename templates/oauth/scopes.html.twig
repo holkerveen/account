@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Select scopes{% endblock %}
+
+{% block body %}
+    <h1 class="h3 mb-3 font-weight-normal">Select scopes</h1>
+
+    <p>{{ client.name }} wants to access the following information. Uncheck the items you do not wish to share.</p>
+
+    <form method="POST">
+        <ul>
+            <li><input type="checkbox" checked="checked" disabled="disabled"><label>{{ 'name'|trans }}</label></li>
+            {% for scope in scopes %}
+                <li><input name="scope_{{ scope.id }}" value="1" type="checkbox" id="scope_{{ scope.id }}" ><label for="scope_{{ scope.id }}">{{ scope.code }}</label></li>
+            {% endfor %}
+        </ul>
+        <button type="submit" name="action" value="cancel" class="cancel">Cancel</button>
+        <button type="submit" name="action" value="ok" class="primary">Ok</button>
+    </form>
+{% endblock %}

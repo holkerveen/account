@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+    <h1 class="h3 mb-3 font-weight-normal">Welcome</h1>
+
+    <h2>My apps</h2>
+    <ul>
+    {% for app in apps %}
+        <li>{{ app.name }}</li>
+    {% endfor %}
+    </ul>
+    <a class="button" href="/app/new">New App</a>
+
+    <a href="/logout">Logout</a>
+{% endblock %}

@@ -1,0 +1,28 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+security.register:
+  path: /register
+  controller: App\Controller\SecurityController::register
+
+security.registerUser:
+  path: /register
+  controller: App\Controller\SecurityController::createUser
+  methods: [POST]
+
+security.login:
+  path: /login
+  controller: App\Controller\SecurityController::login
+
+security.logout:
+  path: /logout
+
+index:
+  path: /
+  controller: App\Controller\AccountController::index
+
+account.permissions:
+  path: /permissions
+  controller: App\Controller\AccountController::permissions
+
